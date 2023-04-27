@@ -8,22 +8,30 @@ This workshop includes three services:
 ## Deployment
 
 Before all you need to configure your AWS CLI
-`aws configure`
+
+```aws configure```
+
 and to install Serverless framework
-`brew install serverless`
+
+```brew install serverless```
 
 After that you able to deploy it as CloudFormation stack via
-`sls deploy`
+
+```sls deploy```
 
 To deploy specific funciton
-`sls deploy -f <funciton_name>`
+
+```sls deploy -f <funciton_name>```
 
 To view logs of this function execution
-`sls logs -f <function_name>`
+
+```sls logs -f <function_name>```
 
 To trigger function manually
-`sls invoke -f <function_name>`
+
+```sls invoke -f <function_name>```
 
 To remove stack completely
-`sls delete`
+
+```sls delete```
 
