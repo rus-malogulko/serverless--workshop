@@ -35,3 +35,10 @@ To remove stack completely
 
 ```sls delete```
 
+## Create new service based on template
+
+```sls create --name notification-service --template-url https://github.com/arielweinberger/sls-base```
+
+For auth service used different template
+
+```sls create --name notification-service --template-url https://github.com/arielweinberger/serverless-auth0-authorizer```
