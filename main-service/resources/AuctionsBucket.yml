@@ -1,0 +1,23 @@
+AuctionsBucket:
+  Type: AWS::S3::Bucket
+  Properties:
+    BucketName: ${self:custom.AuctionsBucket.name}
+    LifecycleConfiguration:
+      Rules:
+        - Id: ExpireOldObjects
+          Status: Enabled
+          ExpirationInDays: 1
+
+AuctionsBucketPolicy:
+  Type: AWS::S3::BucketPolicy
+  Properties:
+    Bucket: !Ref AuctionsBucket
+    PolicyDocument:
+      Statement:
+        - Effect: Allow
+          Sid: PublicReadGetObject
+          Principal: '*'
+          Action:
+            - s3:GetObject
+          Resource: arn:aws:s3:::${self:custom.AuctionsBucket.name}/*
+
